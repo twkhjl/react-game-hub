@@ -3,8 +3,6 @@ import { Card, CardBody, Image, Heading, HStack } from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 
 import PlatformIconList from "./PlatformIconList";
-
-import { Badge } from "@chakra-ui/react";
 import CriticScore from "./CriticScore";
 
 interface Props {
