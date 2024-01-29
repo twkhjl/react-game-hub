@@ -11,6 +11,7 @@ export interface Game {
   id: number;
   slug: string;
   name: string;
+  metacritic: number;
   released: string;
   background_image: string;
   updated: string;
