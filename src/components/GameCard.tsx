@@ -21,7 +21,7 @@ const GameCard = ({ game }: Props) => {
         >
           <Image
             src={getCroppedImageUrl(game.background_image)}
-            maxH={{ base: "100%", sm: "200px" }}
+            minW={{ base: "100%" }}
             _hover={{ transform: "scale(1.2)" }} // Apply scaling on hover
             transition="transform 0.2s ease-in-out" // Add transition effect
           ></Image>
