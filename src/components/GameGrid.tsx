@@ -25,7 +25,7 @@ const GameGrid = () => {
             base: "100vw",
             lg: "90vw",
           }}
-          spacing={10}
+          spacing={3}
           padding={5}
         >
           {skeletonArr.map((skeleton) => (
@@ -42,7 +42,7 @@ const GameGrid = () => {
           lg: 3,
           xl: 5,
         }}
-        spacing={10}
+        spacing={3}
         padding={5}
       >
         {data.map((game) => (
