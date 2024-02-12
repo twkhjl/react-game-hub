@@ -41,8 +41,8 @@ const PlatformSelector = ({ onSelectPlatform }: Props) => {
           xl: 7,
         }}
         minWidth={{
-          base: "100vw",
-          lg: "90vw",
+          base: "90vw",
+          lg: "80vw",
         }}
         paddingX={5}
       >

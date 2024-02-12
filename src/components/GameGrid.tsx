@@ -30,8 +30,8 @@ const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
             xl: 5,
           }}
           minWidth={{
-            base: "100vw",
-            lg: "90vw",
+            base: "90vw",
+            lg: "80vw",
           }}
           spacing={3}
           padding={5}
