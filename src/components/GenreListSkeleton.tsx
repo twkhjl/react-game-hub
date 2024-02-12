@@ -1,7 +1,8 @@
 import { HStack, List, ListItem, Skeleton } from "@chakra-ui/react";
+import numArray from "../services/num-array";
 
 const GenreListSkeleton = () => {
-  const skeletons = [1, 2, 3, 4, 5, 6];
+  const skeletons = numArray(12);
 
   return (
     <List>

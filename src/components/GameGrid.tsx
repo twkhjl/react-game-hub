@@ -3,6 +3,7 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { Genre } from "../hooks/useGenres";
+import numArray from "../services/num-array";
 
 interface Props {
   selectedGenre: Genre | null;
@@ -11,10 +12,7 @@ interface Props {
 const GameGrid = ({ selectedGenre }: Props) => {
   const { data, error, isLoading } = useGames(selectedGenre);
 
-  const skeletonArr = Array.from({ length: 10 }, (v, k) => {
-    v;
-    return k + 1;
-  });
+  const skeletonArr = numArray(20);
 
   return (
     <>
