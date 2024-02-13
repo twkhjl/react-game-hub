@@ -10,12 +10,17 @@ import PlatformSelector, {
 } from "./components/PlatformSelector";
 import { Genre } from "./hooks/useGenres";
 import { Platform } from "./hooks/usePlatforms";
+import SortSelector, { Ordering } from "./components/SortSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
   );
+  const [selectedOrdering, setSelectedOrdering] = useState<Ordering | null>(
+    null
+  );
+
   return (
     <Grid
       templateAreas={{
@@ -44,16 +49,25 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <PlatformSelector
-          onSelectPlatform={function (
-            newValue: SingleValue<platformOption>
-          ): void | undefined {
-            setSelectedPlatform(newValue);
-          }}
-        ></PlatformSelector>
+        <HStack display={"flex"} justifyContent={"flex-start"} spacing={5}>
+          <PlatformSelector
+            onSelectPlatform={function (
+              newValue: SingleValue<platformOption>
+            ): void | undefined {
+              setSelectedPlatform(newValue);
+            }}
+          ></PlatformSelector>
+          <SortSelector
+            selectedOrdering={selectedOrdering}
+            onSelectOrdering={(ordering: Ordering) => {
+              setSelectedOrdering(ordering);
+            }}
+          ></SortSelector>
+        </HStack>
         <GameGrid
           selectedGenre={selectedGenre}
           selectedPlatform={selectedPlatform}
+          selectedOrdering={selectedOrdering}
         ></GameGrid>
       </GridItem>
     </Grid>

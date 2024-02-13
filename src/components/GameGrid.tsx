@@ -5,16 +5,23 @@ import numArray from "../services/num-array";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import { Platform } from "../hooks/usePlatforms";
+import { Ordering } from "./SortSelector";
 
 interface Props {
   selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
+  selectedOrdering: Ordering | null;
 }
 
-const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+const GameGrid = ({
+  selectedGenre,
+  selectedPlatform,
+  selectedOrdering,
+}: Props) => {
   const { data, error, isLoading } = useGames({
     selectedGenre,
     selectedPlatform,
+    selectedOrdering,
   });
 
   const skeletonArr = numArray(20);
