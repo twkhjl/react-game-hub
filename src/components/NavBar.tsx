@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
       <HStack>
-        <Image src={logo} boxSize={"60px"} />
+        <Image src={logo} boxSize={"80px"} marginX={2} marginY={5} />
       </HStack>
     </>
   );
