@@ -1,4 +1,3 @@
-import { SimpleGrid } from "@chakra-ui/react";
 import { ActionMeta, Select, SingleValue } from "chakra-react-select";
 import usePlatforms from "../hooks/usePlatforms";
 
@@ -32,26 +31,11 @@ const PlatformSelector = ({ onSelectPlatform }: Props) => {
 
   return (
     <>
-      <SimpleGrid
-        textAlign={"left"}
-        columns={{
-          sm: 1,
-          md: 3,
-          lg: 5,
-          xl: 7,
-        }}
-        minWidth={{
-          base: "90vw",
-          lg: "80vw",
-        }}
-        paddingX={5}
-      >
-        <Select
-          onChange={onSelectPlatform}
-          placeholder="platform..."
-          options={platformOptions}
-        />
-      </SimpleGrid>
+      <Select
+        onChange={onSelectPlatform}
+        placeholder="platform..."
+        options={platformOptions}
+      />
     </>
   );
 };
