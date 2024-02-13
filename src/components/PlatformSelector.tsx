@@ -9,7 +9,7 @@ interface Props {
 }
 
 export interface platformOption {
-  id: number;
+  id: number | null;
   name: string;
   slug: string;
 
@@ -28,6 +28,15 @@ const PlatformSelector = ({ onSelectPlatform }: Props) => {
     value: platform.name,
     label: platform.name,
   }));
+
+  platformOptions.unshift({
+    id: null,
+    name: "",
+    slug: "",
+
+    value: "",
+    label: "ALL",
+  });
 
   return (
     <>
