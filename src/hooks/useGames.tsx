@@ -1,6 +1,5 @@
-import { Ordering } from "../components/SortSelector";
+import { GameQuery } from "../App";
 import useData from "./useData";
-import { Genre } from "./useGenres";
 import { Platform } from "./usePlatforms";
 
 export interface Game {
@@ -15,34 +14,21 @@ export interface Game {
 }
 
 interface Props {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
-  selectedOrdering: Ordering | null;
-  searchString: string | null;
+  gameQuery: GameQuery;
 }
 
-const useGames = ({
-  selectedGenre,
-  selectedPlatform,
-  selectedOrdering,
-  searchString,
-}: Props) =>
+const useGames = ({ gameQuery }: Props) =>
   useData<Game>(
     "/games",
     {
       params: {
-        genres: selectedGenre?.id,
-        platforms: selectedPlatform?.id,
-        ordering: selectedOrdering?.value,
-        search: searchString,
+        genres: gameQuery.genre?.id,
+        platforms: gameQuery.platformOption?.id,
+        ordering: gameQuery.ordering?.value,
+        search: gameQuery.searchString,
       },
     },
-    [
-      selectedGenre?.id,
-      selectedPlatform?.id,
-      selectedOrdering?.value,
-      searchString,
-    ]
+    [gameQuery]
   );
 
 export default useGames;
