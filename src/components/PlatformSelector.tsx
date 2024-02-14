@@ -1,5 +1,6 @@
 import { ActionMeta, Select, SingleValue } from "chakra-react-select";
 import usePlatforms from "../hooks/usePlatforms";
+import { Box } from "@chakra-ui/react";
 
 interface Props {
   onSelectPlatform: (
@@ -40,11 +41,19 @@ const PlatformSelector = ({ onSelectPlatform }: Props) => {
 
   return (
     <>
-      <Select
-        onChange={onSelectPlatform}
-        placeholder="platform..."
-        options={platformOptions}
-      />
+      <Box
+        width={{
+          base: "100%",
+          sm: "30%",
+          lg: "250px",
+        }}
+      >
+        <Select
+          onChange={onSelectPlatform}
+          placeholder="platform..."
+          options={platformOptions}
+        />
+      </Box>
     </>
   );
 };
