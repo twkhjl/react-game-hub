@@ -20,6 +20,8 @@ function App() {
     null
   );
 
+  const [searchString, setSearchString] = useState<string | null>(null);
+
   return (
     <Grid
       templateAreas={{
@@ -32,7 +34,11 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar />
+        <NavBar
+          onEnterSearchString={(value: string) => {
+            setSearchString(value);
+          }}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={3}>
@@ -64,6 +70,7 @@ function App() {
           selectedGenre={selectedGenre}
           selectedPlatform={selectedPlatform}
           selectedOrdering={selectedOrdering}
+          searchString={searchString}
         ></GameGrid>
       </GridItem>
     </Grid>

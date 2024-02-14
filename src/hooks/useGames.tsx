@@ -18,12 +18,14 @@ interface Props {
   selectedGenre: Genre | null;
   selectedPlatform: Platform | null;
   selectedOrdering: Ordering | null;
+  searchString: string | null;
 }
 
 const useGames = ({
   selectedGenre,
   selectedPlatform,
   selectedOrdering,
+  searchString,
 }: Props) =>
   useData<Game>(
     "/games",
@@ -32,9 +34,15 @@ const useGames = ({
         genres: selectedGenre?.id,
         platforms: selectedPlatform?.id,
         ordering: selectedOrdering?.value,
+        search: searchString,
       },
     },
-    [selectedGenre?.id, selectedPlatform?.id, selectedOrdering?.value]
+    [
+      selectedGenre?.id,
+      selectedPlatform?.id,
+      selectedOrdering?.value,
+      searchString,
+    ]
   );
 
 export default useGames;
