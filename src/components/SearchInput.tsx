@@ -1,9 +1,4 @@
-import {
-  Input,
-  InputGroup,
-  InputLeftElement,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 
 interface Props {
