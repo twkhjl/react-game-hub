@@ -1,7 +1,6 @@
 import { Grid, GridItem, HStack, Show } from "@chakra-ui/react";
 import { SingleValue } from "chakra-react-select";
 import { useState } from "react";
-import ColorModeSwitch from "./components/ColorModeSwitch";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 import NavBar from "./components/NavBar";
@@ -33,10 +32,7 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <HStack justifyContent={"space-between"} marginEnd={"15px"}>
-          <NavBar />
-          <ColorModeSwitch></ColorModeSwitch>
-        </HStack>
+        <NavBar />
       </GridItem>
       <Show above="lg">
         <GridItem area="aside" paddingX={3}>
